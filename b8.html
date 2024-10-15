@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game Doan so</title>
+</head>
+<body>
+<input type="button" value="start" onclick="doanso()">
+
+<script>
+  function doanso() {
+    const maxAttempts = 3;
+    let number = +prompt("Nhap so lon nhat cho pham vi doan:");
+
+    if (isNaN(number) || number <= 0) {
+      alert("Vui long nhap mot so hop le lon hon 0.");
+      return;
+    }
+
+    let number_ran = Math.floor(Math.random() * number);
+    console.log("So ngau nhien la: " + number_ran); // De kiem tra
+    let count = 0;
+    let number_check;
+
+    while (count < maxAttempts) {
+      number_check = +prompt(`Lan doan thu ${count + 1}: Nhap so ban doan`);
+
+      if (isNaN(number_check)) {
+        alert("Vui long nhap mot so hop le.");
+        continue;
+      }
+
+      count++;
+
+      if (number_check === number_ran) {
+        document.write("Ban da doan dung so. Chuc mung ban!");
+        return;
+      } else if (number_check < number_ran) {
+        alert("So ban doan be hon.");
+      } else {
+        alert("So ban doan lon hon.");
+      }
+    }
+
+    document.write("Ban da het so lan doan. So dung la: " + number_ran);
+  }
+</script>
+
+</body>
+</html>

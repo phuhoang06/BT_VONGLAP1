@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function tinhtong(n){
+    let i=0;
+    let sum=0;
+    let count=0;
+    while(count<n){
+      if(i % 7 == 0){
+        sum += i;
+        count++;
+      }
+      i++
+    }
+    return sum;
+
+  }
+  document.write("Tổng của 30 số chia hết cho 7 đầu tiên là: " +tinhtong(30))
+</script>
+</body>
+</html>

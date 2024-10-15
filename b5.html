@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function fibolasi(n){
+    let a = 0;
+    let b = 1;
+    let count = a+b;
+    for (let i = 2; i < n; i++) {
+      next = a + b;
+      count+=next
+      a = b
+      b = next
+
+
+    }
+return count;
+  }
+document.write('tong la ' + fibolasi(20));
+</script>
+
+</body>
+</html>
